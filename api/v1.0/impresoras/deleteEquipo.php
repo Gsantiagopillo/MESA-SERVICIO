@@ -1,0 +1,12 @@
+<?php
+require "../conexion.php";
+$id = $_POST['id'];
+
+$delete = mysqli_query($mysqli, "delete from num_serie_equipo where id ='$id'");
+
+$res = array(
+  "err" => !$delete,
+  "id" => $id
+);
+
+echo json_encode($res);

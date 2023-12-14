@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Editar Cliente - Mesa De Servicio</title>
+</head>
+
+<body>
+  <header data-include="../../header.html"></header>
+  <main>
+    <h4 class="text-center fw-bold">Editar Cliente</h4>
+
+    <form id="form-edit-client" class="form-info" autocomplete="off">
+      <input type="hidden" id="id-client">
+      <div class="input-field " style="align-self:flex-end">
+        <select id="empresa" required>
+          <option value="" disabled selected>Elige una empresa</option>
+        </select>
+        <label>Empresa</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Nombre(s)" id="nombre" type="text" class="validate" autocomplete="off" required>
+        <label for="nombre">Nombre(s)</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Apellido Paterno" id="apellido-paterno" type="text" class="validate" autocomplete="off"
+          required>
+        <label for="apellido-paterno">apellido Paterno</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Apellido Materno" id="apellido-materno" type="text" class="validate" autocomplete="off"
+          required>
+        <label for="apellido-materno">Apellido Materno</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Puesto" id="puesto" type="text" class="validate" autocomplete="off" required>
+        <label for="puesto">Puesto</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Teléfono" id="telefono" type="tel" class="validate" autocomplete="off" required>
+        <label for="telefono">Teléfono</label>
+      </div>
+      <div class="input-field mt-25">
+        <input placeholder="Correo" id="correo" type="email" class="validate" autocomplete="off" required>
+        <label for="correo">Correo</label>
+      </div>
+      <button class="btn waves-effect waves-ligh" type="submit">Actualizar
+        <i class="material-icons right">send</i>
+      </button>
+
+    </form>
+  </main>
+
+  <section class="load"><img src="../../assets/puff.svg" alt="cargando"></section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });</script>
+  <script src="../../js/index.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Listado de reportes</title>
+</head>
+
+<body>
+  <header data-include="../../header.html"></header>
+
+  <main>
+    <h4 class="text-center fw-bold">Listado de Reportes de Mantenimiento</h4>
+    <section class="filtros">
+      <span class="filtros-tittle">Filtros</span>
+
+      <article class="filtros-nav">
+        <div class="input-field filtros-input ">
+          <input placeholder="#Reporte" id="filtro-reporte" type="text" class="validate" autocomplete="off">
+          <label for="filtro-reporte">Número de Reporte</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-filtroreporte">
+            <p id="opcion-autocomplete-filtroreporte"></p>
+          </aside>
+        </div>
+        <div class="input-field  filtros-input">
+          <select id="filtro-empresa">
+            <option value="" selected>Elije Empresa:</option>
+          </select>
+          <label>Empresa</label>
+        </div>
+        <div class="input-field filtros-input ">
+          <input placeholder="#Serie" id="filtro-serie" type="text" class="validate" autocomplete="off">
+          <label for="filtro-serie">Número de Serie</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-filtroserie">
+            <p id="opcion-autocomplete-filtroserie"></p>
+          </aside>
+        </div>
+        <a class="waves-effect waves-light btn filtros-input" id="filtro-send">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel"
+            viewBox="0 0 16 16" style="vertical-align: middle;">
+            <path
+              d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z" />
+          </svg>
+          Aplicar filtros</a>
+      </article>
+
+    </section>
+    <article id="reportes-list-content">
+      <table class="highlight centered table responsive-table">
+        <thead>
+          <tr>
+            <th>#Reporte</th>
+            <th>Empresa</th>
+            <th>Modelo</th>
+            <th>Núm. Serie</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Editar</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody">
+        </tbody>
+      </table>
+    </article>
+
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems);
+    });</script>
+  <script src="../../js/index.js" type="module"></script>
+</body>
+
+</html>

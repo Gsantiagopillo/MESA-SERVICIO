@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Fabricantes - Mesa De Servicio</title>
+</head>
+</head>
+
+<body>
+  <header data-include="../../header.html"></header>
+  <main>
+    <h4 class="text-center fw-bold">Fabricantes de impresoras</h4>
+
+    <section class="d-flex table section-add-marcas justify-content-end">
+      <a class="waves-effect waves-light btn " id="add-marca"><i class="material-icons right">add</i>Agregar</a>
+      <a class="waves-effect waves-light btn d-none form-create-doc" id="create-marca"><i
+          class="material-icons right">send</i>Crear</a>
+    </section>
+    <article id="marcas-content" class="d-flex flex-column justify-content-center align-items-center">
+      <table class="highlight centered table responsive-table" id="marca-table">
+        <thead>
+          <tr id="tr-head-marcas">
+            <th>Nombre</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody-marcas">
+          <template id="marcas-template">
+            <tr id="tr-marcas">
+              <td id="marca-name" class="cursor-pointer"></td>
+              <td><i class="material-icons cursor-pointer " id="marca-delete">delete</i></td>
+            </tr>
+          </template>
+
+
+        </tbody>
+      </table>
+    </article>
+
+  </main>
+
+  <section class="load"><img src="../../assets/puff.svg" alt="cargando"></section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="../../js/index.js" type="module"></script>
+</body>
+
+</html>

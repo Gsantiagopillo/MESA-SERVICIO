@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Reportes - Mesa De Servicio</title>
+  <style>
+    canvas {
+      width: 500px;
+      height: 500px;
+      background-color: #0D0909;
+    }
+  </style>
+
+</head>
+
+
+<body>
+  <header data-include="../../header.html"></header>
+  <main>
+    <h4 class="text-center fw-bold">Crear Reporte de Mantenimiento</h4>
+
+    <form id="form-create-reporte" style="padding-bottom: 2rem;">
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400;">Información del cliente:</h3>
+      <section class="form-info">
+        <!-- <input type="hidden" id="reporte-create-id"> -->
+        <div class="input-field">
+          <input placeholder="Empresa " id="reporte-create-empresa" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-empresa">Empresa Cliente</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-empresa">
+            <p id="opcion-autocomplete-empresa"></p>
+          </aside>
+        </div>
+        <div class="input-field">
+          <input placeholder="Cliente" id="reporte-create-cliente" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-cliente">Usuario</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-cliente">
+            <p id="opcion-autocomplete-cliente"></p>
+          </aside>
+        </div>
+        <div class="input-field">
+          <input placeholder="Dirección" id="reporte-create-direccion" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-direccion">Dirección</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Teléfono" id="reporte-create-tel" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-tel">Teléfono</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Correo" id="reporte-create-correo" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-correo">Correo</label>
+        </div>
+        <div class="input-field " style="display: none;">
+          <input placeholder="Puesto" id="reporte-create-puesto" type="text" class="validate" autocomplete="off">
+          <label for="reporte-create-puesto">Puesto</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400;">Información del equipo:</h3>
+      <section class="form-info">
+        <div class="input-field">
+          <input placeholder="Marca " id="reporte-create-marca" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-marca">Marca</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-marca">
+            <p id="opcion-autocomplete-marca"></p>
+          </aside>
+        </div>
+        <div class="input-field">
+          <input placeholder="Modelo" id="reporte-create-modelo" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-modelo">Modelo</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-modelo">
+            <p id="opcion-autocomplete-modelo"></p>
+          </aside>
+        </div>
+        <div class="input-field">
+          <input placeholder="Número de serie" id="reporte-create-serie" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-serie">Número de serie</label>
+          <aside class="aside-autocomplete" id="aside-autocomplete-serie">
+            <p id="opcion-autocomplete-serie"></p>
+          </aside>
+        </div>
+        <div class="input-field">
+          <input placeholder="Ubicación" id="reporte-create-ubicacion" type="text" class="validate" autocomplete="off"
+            required>
+          <label for="reporte-create-ubicacion">Ubicación</label>
+        </div>
+        <div class="input-field info-comp-equipo" style="display: none;">
+          <input placeholder="DPI´s" id="reporte-create-dpi" type="text" class="validate" autocomplete="off">
+          <label for="reporte-create-dpi">DPI´s</label>
+        </div>
+        <div class="input-field info-comp-equipo" style="display: none;">
+          <input placeholder="Ancho Cabezal" id="reporte-create-width" type="text" class="validate" autocomplete="off">
+          <label for="reporte-create-width">Ancho Cabezal</label>
+        </div>
+        <div class="input-field info-comp-equipo" style="display: none;">
+          <input placeholder="Número de parte" id="reporte-create-part" type="text" class="validate" autocomplete="off">
+          <label for="reporte-create-ubicacion">Número de parte</label>
+        </div>
+
+
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">Tipo de mantenimiento:
+      </h3>
+      <section class="form-info">
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-create-dx" />
+            <span>DIAGNÓSTICO</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-create-mp" />
+            <span>PREVENTIVO</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-create-cm" />
+            <span>CORRECTIVO</span>
+          </label>
+        </p>
+      </section>
+
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES DIAGNOSTICO:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Buena limpieza general del equipo
+            <input type="checkbox" id="reporte-create-adx-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Limpieza del área del equipo
+            <input type="checkbox" id="reporte-create-adx-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Falta de presion en el cabezal
+            <input type="checkbox" id="reporte-create-adx-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cabezal con puntos quemados
+            <input type="checkbox" id="reporte-create-adx-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Rodillo dañado
+            <input type="checkbox" id="reporte-create-adx-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Etiquetas pegadas
+            <input type="checkbox" id="reporte-create-adx-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Mala configuración
+            <input type="checkbox" id="reporte-create-adx-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Banda dañada
+            <input type="checkbox" id="reporte-create-adx-8">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES PREVENTIVAS:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Limpieza general
+            <input type="checkbox" id="reporte-create-mp-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión general
+            <input type="checkbox" id="reporte-create-mp-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión de avance de papel
+            <input type="checkbox" id="reporte-create-mp-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión avance de Ribbon
+            <input type="checkbox" id="reporte-create-mp-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Mecanismo de rodillo
+            <input type="checkbox" id="reporte-create-mp-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión de sensores
+            <input type="checkbox" id="reporte-create-mp-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Calibración de sensores
+            <input type="checkbox" id="reporte-create-mp-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            configuración optima
+            <input type="checkbox" id="reporte-create-mp-8">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES CORRECTIVAS:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Cambio de cabezal
+            <input type="checkbox" id="reporte-create-cm-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de rodillo motriz
+            <input type="checkbox" id="reporte-create-cm-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de banda de tracción
+            <input type="checkbox" id="reporte-create-cm-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de sensores de ribbon
+            <input type="checkbox" id="reporte-create-cm-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de sensores de papel
+            <input type="checkbox" id="reporte-create-cm-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de tarjetas Lógicas
+            <input type="checkbox" id="reporte-create-cm-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de fuente de poder
+            <input type="checkbox" id="reporte-create-cm-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <section class="form-info">
+        <div class="input-field ">
+          <input id="reporte-create-cm-8" type="text" class="validate">
+          <label for="reporte-create-cm-8">Otras</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        ACTIVIDADES REALIZADAS:</h3>
+      <section class="form-info-notas">
+        <div class="input-field">
+          <textarea id="reporte-create-nota" class="materialize-textarea" required></textarea>
+          <label for="reporte-create-nota">Notas</label>
+        </div>
+        <div class="input-field">
+          <textarea id="reporte-create-coment" class="materialize-textarea" required></textarea>
+          <label for="reporte-create-coment">Comentarios</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        EVIDENCIA ANTES:</h3>
+      <section class="form-info">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Fotos</span>
+            <input type="file" multiple accept="image/*" id="reporte-create-antes-equipo">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Fotos antes de equipo">
+          </div>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Fotos</span>
+            <input type="file" multiple accept="image/*" id="reporte-create-antes-eti">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Fotos antes de etiquetas">
+          </div>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        EVIDENCIA DESPUES:</h3>
+      <section class="form-info">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Fotos</span>
+            <input type="file" multiple accept="image/*" id="reporte-create-despues-equipo">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Fotos despues de equipo">
+          </div>
+        </div>
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>Fotos</span>
+            <input type="file" multiple accept="image/*" id="reporte-create-despues-eti">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Fotos despues de etiquetas">
+          </div>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        Proximo servicio:</h3>
+      <section class="form-info">
+        <div class="input-field col s6">
+          <input placeholder="0" id="reporte-create-periocidad" type="number" class="validate" required>
+          <label for="reporte-create-periocidad">Periocidad (meses)</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Placeholder" id="reporte-create-next" type="date" class="validate" required>
+          <label for="reporte-create-next">Próximo mantenimiento</label>
+        </div>
+      </section>
+      <section class="form-info">
+        <div class="file-field input-field">
+          <div class="btn">
+            <span>File</span>
+            <input type="file" accept="image/* required" id="reporte-create-firma">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" placeholder="Captura de la firma">
+          </div>
+        </div>
+      </section>
+      <section class="form-info"><button class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button></section>
+    </form>
+  </main>
+
+  <section class="load"><img src="../../assets/puff.svg" alt="cargando"></section>
+
+  <iframe src="./convas.html" frameborder="0" class="iframe-firm"></iframe>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="../../js/index.js" type="module"></script>
+
+</body>
+
+</html>

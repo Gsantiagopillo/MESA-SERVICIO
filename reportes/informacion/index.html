@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/styles.css">
+  <title>Detalles del Reporte</title>
+</head>
+
+<body>
+  <header data-include="../../header.html"></header>
+
+  <main>
+    <h4 class="text-center fw-bold">Información del Reporte</h4>
+
+    <form id="form-info-reporte" style="padding-bottom: 2rem;">
+      <section class="form-info">
+        <div class="input-field">
+          <input placeholder="numReporte" id="reporte-id" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-id" style="color: black;">Número de reporte</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Fecha" id="reporte-fecha" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-fecha" style="color: black;">Fecha</label>
+        </div>
+        <a class="waves-effect waves-light btn" id="reporte-pdf" target="_blank" rel="noopener">DESCARGAR PDF</a>
+
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400;">Información del cliente:</h3>
+      <section class="form-info">
+        <!-- <input type="hidden" id="reporte-id"> -->
+        <div class="input-field">
+          <input placeholder="Empresa " id="reporte-empresa" type="text" class="validate" disabled
+            style="color: black;">
+          <label for="reporte-empresa" style="color: black;">Empresa Cliente</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Cliente" id="reporte-cliente" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-cliente" style="color: black;">Usuario</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Dirección" id="reporte-direccion" type="text" class="validate" disabled
+            style="color: black;">
+          <label for="reporte-direccion" style="color: black;">Dirección</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Teléfono" id="reporte-tel" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-tel" style="color: black;">Teléfono</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Correo" id="reporte-correo" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-correo" style="color: black;">Correo</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400;">Información del equipo:</h3>
+      <section class="form-info">
+        <div class="input-field">
+          <input placeholder="Marca " id="reporte-marca" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-marca" style="color: black;">Marca</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Modelo" id="reporte-modelo" type="text" class="validate" disabled style="color: black;">
+          <label for="reporte-modelo" style="color: black;">Modelo</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Número de serie" id="reporte-serie" type="text" class="validate" disabled
+            style="color: black;">
+          <label for="reporte-serie" style="color: black;">Número de serie</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Ubicación" id="reporte-ubicacion" type="text" class="validate" disabled
+            style="color: black;">
+          <label for="reporte-ubicacion" style="color: black;">Ubicación</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">Tipo de mantenimiento:
+      </h3>
+      <section class="form-info">
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-dx" />
+            <span>DIAGNÓSTICO</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-mp" />
+            <span>PREVENTIVO</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input type="checkbox" class="filled-in" id="reporte-cm" />
+            <span>CORRECTIVO</span>
+          </label>
+        </p>
+      </section>
+
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES DIAGNOSTICO:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Buena limpieza general del equipo
+            <input type="checkbox" id="reporte-adx-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Limpieza del área del equipo
+            <input type="checkbox" id="reporte-adx-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Falta de presion en el cabezal
+            <input type="checkbox" id="reporte-adx-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cabezal con puntos quemados
+            <input type="checkbox" id="reporte-adx-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Rodillo dañado
+            <input type="checkbox" id="reporte-adx-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Etiquetas pegadas
+            <input type="checkbox" id="reporte-adx-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Mala configuración
+            <input type="checkbox" id="reporte-adx-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Banda dañada
+            <input type="checkbox" id="reporte-adx-8">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES PREVENTIVAS:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Limpieza general
+            <input type="checkbox" id="reporte-mp-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión general
+            <input type="checkbox" id="reporte-mp-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión de avance de papel
+            <input type="checkbox" id="reporte-mp-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión avance de Ribbon
+            <input type="checkbox" id="reporte-mp-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Mecanismo de rodillo
+            <input type="checkbox" id="reporte-mp-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Revisión de sensores
+            <input type="checkbox" id="reporte-mp-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Calibración de sensores
+            <input type="checkbox" id="reporte-mp-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            configuración optima
+            <input type="checkbox" id="reporte-mp-8">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">ACTIVIDADES CORRECTIVAS:
+      </h3>
+      <section class="form-info-switch">
+        <div class="switch">
+          <label>
+            Cambio de cabezal
+            <input type="checkbox" id="reporte-cm-1">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de rodillo motriz
+            <input type="checkbox" id="reporte-cm-2">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de banda de tracción
+            <input type="checkbox" id="reporte-cm-3">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de sensores de ribbon
+            <input type="checkbox" id="reporte-cm-4">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de sensores de papel
+            <input type="checkbox" id="reporte-cm-5">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de tarjetas Lógicas
+            <input type="checkbox" id="reporte-cm-6">
+            <span class="lever"></span>
+          </label>
+        </div>
+        <div class="switch">
+          <label>
+            Cambio de fuente de poder
+            <input type="checkbox" id="reporte-cm-7">
+            <span class="lever"></span>
+          </label>
+        </div>
+      </section>
+      <section class="form-info">
+        <div class="input-field">
+          <input id="reporte-cm-8" type="text" class="validate" placeholder="Otras" disabled style="color: black;">
+          <label for="reporte-cm-8" style="color: black;">Otras</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        ACTIVIDADES REALIZADAS:</h3>
+      <section class="form-info-notas">
+        <div>
+          <label for="reporte-nota">Notas</label>
+          <p id="reporte-nota"></p>
+        </div>
+        <div>
+          <label for="reporte-coment">Comentarios</label>
+          <p id="reporte-coment"></p>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        Proximo servicio:</h3>
+      <section class="form-info">
+        <div class="input-field ">
+          <input placeholder="0" id="reporte-periocidad" type="number" class="validate" disabled style="color: black;">
+          <label for="reporte-periocidad" style="color: black;">Periocidad (meses)</label>
+        </div>
+        <div class="input-field">
+          <input placeholder="Placeholder" id="reporte-next" type="date" class="validate" disabled
+            style="color: black;">
+          <label for="reporte-next" style="color: black;">Próximo mantenimiento</label>
+        </div>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        FIRMA DE SATISFACCION:
+      </h3>
+      <section class="form-info">
+        <figure id="reporte-firma"></figure>
+        <p style="align-self: center;">REPORTE ELABORADO POR: <br><span style="font-weight: 600;"
+            id="reporte-usuario"></span></p>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        EVIDENCIA ANTES:</h3>
+      <section class="form-figure">
+        <figure id="reporte-antes-eti" class="reporte-figure"></figure>
+        <figure id="reporte-antes-equipo" class="reporte-figure"></figure>
+      </section>
+      <h3 style="font-size: 1.5rem; padding-left: 1rem; font-weight: 400; margin-top: 1rem;">
+        EVIDENCIA DESPUES:</h3>
+      <section class="form-figure">
+        <figure id="reporte-despues-equipo" class="reporte-figure"></figure>
+        <figure id="reporte-despues-eti" class="reporte-figure"></figure>
+      </section>
+    </form>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="../../js/index.js" type="module"></script>
+</body>
+
+</html>

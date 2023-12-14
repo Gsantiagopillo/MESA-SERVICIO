@@ -1,0 +1,112 @@
+<header class="header-admin position-sticky top-0 d-flex justify-content-between w-100 bg-white">
+  <section
+    class="header-admin-section1 position-relative d-flex flex-grow-0 flex-shrink-0 justify-content-center align-items-center">
+    <button class="button-menu-admin" id="button-menu-admin" style="background-color: inherit;"><img
+        src="http://localhost/mesa-servicio/assets/header/list.svg" alt="button-menu"></button>
+    <a href="http://etiroch.com" class="logo-admin"><img src="http://localhost/mesa-servicio/assets/logoe.jfif"
+        alt="logo"></a>
+  </section>
+  <section class="user-admin d-flex justify-content-end align-items-center">
+    <a href="http://localhost/mesa-servicio/" class="user-item-admin">
+      <img src="http://localhost/mesa-servicio/assets/header/Botonhome.png" alt="home">
+    </a>
+    <span class="user-item-admin cursor-pointer" data-nav-user>
+      <img src="http://localhost/mesa-servicio/assets/header/person-fill.svg" alt="user" data-nav-user>
+      <nav class="user-item-admin-child cursor-default" data-submenu-user>
+        <a href="http://etiroch.com/mesa-servicio/perfil">Perfil <img
+            src="http://localhost/mesa-servicio/assets/header/person-circle.svg" alt="perfil"></a>
+        <a id="logout" class="cursor-pointer">Cerrar sesion <img
+            src="http://localhost/mesa-servicio/assets/header/box-arrow-left.svg" alt="logout"></a>
+      </nav>
+    </span>
+  </section>
+  <section class="menu-admin position-absolute top-0 left-0 flex-column" id="menu-admin">
+    <nav class="nav-menu-admin d-flex flex-column">
+      <article>
+        <span class="nav-menu-admin-item cursor-pointer position-relative d-flex align-items-center fw-bold"
+          data-nav-item="1">
+          <img class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/caret-down-fill.svg" alt="item"
+            data-nav-item="1">
+          Usuarios
+        </span>
+        <nav class="nav-admin-item-child cursor-default" data-submenu="1">
+          <a href="http://localhost/mesa-servicio/usuarios/create/" class="menu-add"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/plus-circle-fill.svg" alt="item">Registrar
+            Usuario</a>
+          <a href="http://localhost/mesa-servicio/usuarios/listado"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado
+            de Usuarios</a>
+        </nav>
+      </article>
+
+      <article>
+        <span class="nav-menu-admin-item cursor-pointer position-relative d-flex align-items-center fw-bold"
+          data-nav-item="2">
+          <img class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/caret-down-fill.svg" alt="item"
+            data-nav-item="2">
+          Empresas
+        </span>
+        <nav class="nav-admin-item-child cursor-default" data-submenu="2">
+          <a href="http://localhost/mesa-servicio/empresas/create" class="menu-add"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/plus-circle-fill.svg" alt="item">Registrar
+            Empresa</a>
+          <a href="http://localhost/mesa-servicio/empresas/listado"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado de Empresas</a>
+        </nav>
+      </article>
+      <article>
+        <span class="nav-menu-admin-item cursor-pointer position-relative d-flex align-items-center fw-bold"
+          data-nav-item="3">
+          <img class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/caret-down-fill.svg" alt="item"
+            data-nav-item="3">
+          Clientes
+        </span>
+        <nav class="nav-admin-item-child cursor-default" data-submenu="3">
+          <a href="http://localhost/mesa-servicio/clientes/create" class="menu-add"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/plus-circle-fill.svg" alt="item">Registrar
+            Cliente</a>
+          <a href="http://localhost/mesa-servicio/clientes/listado"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado de Clientes</a>
+        </nav>
+      </article>
+      <article>
+        <span class="nav-menu-admin-item cursor-pointer position-relative d-flex align-items-center fw-bold"
+          data-nav-item="4">
+          <img class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/caret-down-fill.svg" alt="item"
+            data-nav-item="4">
+          Impresoras
+        </span>
+        <nav class="nav-admin-item-child cursor-default" data-submenu="4">
+          <a href="http://localhost/mesa-servicio/impresoras/listado/listMarca.html"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado de marcas</a>
+          <a href="http://localhost/mesa-servicio/impresoras/listado/listadoModelos.html" id="a-listado-modelos"><img
+              class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado
+            de modelos</a>
+          <a href="http://localhost/mesa-servicio/impresoras/listado/listadoEquipos.html" id="a-listado-equipos"><img
+              class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado
+            de
+            dispositivos</a>
+        </nav>
+      </article>
+      <article>
+        <span class="nav-menu-admin-item cursor-pointer position-relative d-flex align-items-center fw-bold"
+          data-nav-item="5">
+          <img class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/caret-down-fill.svg" alt="item"
+            data-nav-item="5">
+          Reportes
+        </span>
+        <nav class="nav-admin-item-child cursor-default" data-submenu="5">
+          <a href="http://localhost/mesa-servicio/reportes/create/index.html"><img class="mr-1 img-auto"
+              src="http://localhost/mesa-servicio/assets/header/plus-circle-fill.svg" alt="item">Nuevo reporte</a>
+          <a href="http://localhost/mesa-servicio/reportes/listado/index.html" id="a-listado-modelos"><img
+              class="mr-1 img-auto" src="http://localhost/mesa-servicio/assets/header/view-list.svg" alt="item">Listado
+            de reportes</a>
+        </nav>
+      </article>
+      <!-- <a href="" class="nav-menu-admin-item fw-bold"><img class="mr-1" src="../../assets/compass.svg" alt="item">
+        opcion3</a>
+      <a href="" class="nav-menu-admin-item fw-bold"><img class="mr-1" src="../../assets/compass.svg" alt="item">
+        opcion4</a> -->
+    </nav>
+  </section>
+</header>
